@@ -10,7 +10,7 @@ const bubbleItems = [
         <path d="M8.5 16H15.5" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" />
       </svg>
     ),
-    className: 'top-[60%] left-1/2 -translate-x-1/2 w-16 h-16 animate-float-a',
+    className: 'top-[64%] left-1/2 -translate-x-1/2 w-16 h-16 animate-float-a',
     bgColor: 'from-orange-400 via-orange-500 to-orange-600',
   },
   {
@@ -20,7 +20,7 @@ const bubbleItems = [
         <path d="M19 18H6a4 4 0 010-8c.6 0 1.15.14 1.65.37A6 6 0 1120 16h-1z" fill="white" opacity="0.95" />
       </svg>
     ),
-    className: 'top-14 left-4 w-16 h-16 animate-float-d',
+    className: 'top-12 left-8 w-16 h-16 animate-float-d',
     bgColor: 'from-violet-500 via-purple-500 to-purple-600',
   },
   {
@@ -33,7 +33,7 @@ const bubbleItems = [
         <path d="M8.5 12H15.5" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" />
       </svg>
     ),
-    className: 'top-[42%] left-6 w-16 h-16 animate-float-c',
+    className: 'top-12 right-8 w-16 h-16 animate-float-c',
     bgColor: 'from-emerald-500 via-emerald-400 to-lime-500',
   },
   {
@@ -44,7 +44,7 @@ const bubbleItems = [
         <circle cx="12" cy="9" r="2.5" fill="white" />
       </svg>
     ),
-    className: 'top-10 right-6 w-16 h-16 animate-float-d',
+    className: 'top-[44%] left-2 w-16 h-16 animate-float-b',
     bgColor: 'from-sky-500 via-cyan-500 to-blue-500',
   },
   {
@@ -55,7 +55,7 @@ const bubbleItems = [
         <path d="M18 16v-5c0-3.07-1.63-5.64-4.5-6.32V4a1.5 1.5 0 10-3 0v.68C7.63 5.36 6 7.92 6 11v5l-1 1v1h14v-1l-1-1z" fill="#ffffff" />
       </svg>
     ),
-    className: 'top-[66%] right-6 w-16 h-16 animate-float-b',
+    className: 'top-[44%] right-2 w-16 h-16 animate-float-b',
     bgColor: 'from-pink-500 via-fuchsia-500 to-rose-500',
   },
 ]
@@ -64,14 +64,13 @@ export default function AnimatedVisual({ laptopImg }: { laptopImg: string }) {
   return (
     <div className="relative w-full overflow-visible px-4 lg:px-0">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="absolute w-[500px] h-[500px] rounded-full border border-white/15 opacity-30 animate-orbit-spin" />
-        <div className="absolute w-[380px] h-[380px] rounded-full border border-[#8b5cf6]/40 border-dashed opacity-35 animate-orbit-spin-reverse" />
-        <div className="absolute w-[280px] h-[280px] rounded-full border border-[#60a5fa]/25 opacity-25" />
-
-        <div className="absolute left-1/2 top-1/2 h-0 w-0 -translate-x-1/2 -translate-y-1/2">
-          <span className="absolute w-3 h-3 rounded-full bg-[#a855f7] opacity-95 orbit-dot-1" style={{ left: '50%', top: '0%' }} />
-          <span className="absolute w-2.5 h-2.5 rounded-full bg-[#8b5cf6] opacity-85 orbit-dot-2" style={{ left: '100%', top: '50%' }} />
-          <span className="absolute w-2 h-2 rounded-full bg-[#7c3aed] opacity-80 orbit-dot-3" style={{ left: '0%', top: '50%' }} />
+        <div className="absolute w-[460px] h-[460px] rounded-full border border-violet-400/25 opacity-35" />
+        <div className="absolute w-[456px] h-[456px] rounded-full border border-violet-300/30 border-dashed opacity-45" />
+        <div className="absolute w-[456px] h-[456px] rounded-full">
+          <span className="absolute w-2.5 h-2.5 rounded-full bg-violet-300 opacity-90 shadow-[0_0_18px_rgba(148,163,255,0.4)]" style={{ left: '50%', top: '2%', transform: 'translateX(-50%)' }} />
+          <span className="absolute w-2.5 h-2.5 rounded-full bg-violet-300 opacity-90 shadow-[0_0_18px_rgba(148,163,255,0.4)]" style={{ left: '50%', bottom: '2%', transform: 'translateX(-50%)' }} />
+          <span className="absolute w-2.5 h-2.5 rounded-full bg-violet-300 opacity-90 shadow-[0_0_18px_rgba(148,163,255,0.4)]" style={{ left: '2%', top: '50%', transform: 'translateY(-50%)' }} />
+          <span className="absolute w-2.5 h-2.5 rounded-full bg-violet-300 opacity-90 shadow-[0_0_18px_rgba(148,163,255,0.4)]" style={{ right: '2%', top: '50%', transform: 'translateY(-50%)' }} />
         </div>
       </div>
 
