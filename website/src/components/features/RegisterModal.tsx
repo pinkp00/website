@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logoImg from '@/assets/azhly-logo.png'
+import logoImg from '@/assets/logo.png'
 
 interface RegisterModalProps {
   isOpen: boolean

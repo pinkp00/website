@@ -1,4 +1,4 @@
-import logoImg from '@/assets/azhly-logo.png'
+import logoImg from '@/assets/logo.png'
 import { useNavigate } from 'react-router-dom'
 
 const footerLinks = {

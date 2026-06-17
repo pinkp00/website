@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import logoImg from '@/assets/azhly-logo.png'
+import logoImg from '@/assets/logo.png'
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate()

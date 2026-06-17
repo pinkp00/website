@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import logoImg from '@/assets/azhly-logo.png'
+import logoImg from '@/assets/logo.png'
 import RegisterModal from '@/components/features/RegisterModal'
 
 const navLinks = [
