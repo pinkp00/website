@@ -324,3 +324,56 @@
     box-shadow: 0 0 24px 6px rgba(139,92,246,0.35), inset 0 0 20px rgba(139,92,246,0.15);
   }
 }
+.animate-orbit-spin { animation: orbit-spin 12s linear infinite; }
+.animate-orbit-spin-reverse { animation: orbit-spin-reverse 18s linear infinite; }
+
+@keyframes orbit-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes orbit-spin-reverse {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.orbit-dot-1 { animation: orbit-dot-travel   12s linear infinite; }
+.orbit-dot-2 { animation: orbit-dot-travel-2 12s linear infinite; }
+.orbit-dot-3 { animation: orbit-dot-travel-3 12s linear infinite; }
+
+@keyframes orbit-dot-travel {
+  from { transform: rotate(0deg)   translateX(175px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(175px) rotate(-360deg); }
+}
+@keyframes orbit-dot-travel-2 {
+  from { transform: rotate(120deg) translateX(175px) rotate(-120deg); }
+  to   { transform: rotate(480deg) translateX(175px) rotate(-480deg); }
+}
+@keyframes orbit-dot-travel-3 {
+  from { transform: rotate(240deg) translateX(175px) rotate(-240deg); }
+  to   { transform: rotate(600deg) translateX(175px) rotate(-600deg); }
+}
+
+.animate-float-laptop { animation: float-laptop 4s ease-in-out infinite; }
+
+@keyframes float-laptop {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+.glass-card {
+  background: rgba(10, 7, 28, 0.88);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.input-dark {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-dark:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.8);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
