@@ -1,6 +1,6 @@
 import { useState } from "react";
 import cityBg from "@/assets/city-bg.jpg";
-import laptopImg from "@/assets/laptop.png";
+import laptopImg from "@/assets/azhly-azhly-laptop.png";
 import AnimatedVisual from "@/components/features/AnimatedVisual";
 import LoginCard from "@/components/features/LoginCard";
 
