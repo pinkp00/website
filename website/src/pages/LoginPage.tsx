@@ -1,3 +1,4 @@
+import { useState } from "react";
 import cityBg from "@/assets/city-bg.jpg";
 import laptopImg from "@/assets/laptop.png";
 import AnimatedVisual from "@/components/features/AnimatedVisual";
@@ -5,31 +6,22 @@ import LoginCard from "@/components/features/LoginCard";
 
 export default function LoginPage() {
   return (
-    <div
-      className="relative min-h-screen w-full overflow-hidden flex items-stretch"
-      style={{ fontFamily: "'Inter', sans-serif" }}
-    >
+    <div className="relative min-h-screen w-full overflow-hidden flex items-stretch" style={{ fontFamily: "'Inter', sans-serif" }}>
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={cityBg}
-          alt="city background"
-          className="w-full h-full object-cover brightness-80 blur-sm"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r
-             from-[#0a041a]/92 via-[#0d0820]/85 to-[#06021a]/88" />
-        <div className="absolute inset-0 bg-gradient-to-b
-             from-transparent via-transparent to-[#0a041a]/70" />
+        <img src={cityBg} alt="city background" className="w-full h-full object-cover brightness-80 blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a041a]/92 via-[#0d0820]/85 to-[#06021a]/88" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a041a]/70" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col lg:flex-row w-full min-h-screen">
-
         {/* Left – animated visual */}
-        <div className="flex-1 flex flex-col items-center justify-center p-8 lg:p-12">
+        <div className="flex-1 flex flex-col items-center justify-center p-8 lg:p-12 lg:pl-12 min-h-[55vh] lg:min-h-screen">
           <AnimatedVisual laptopImg={laptopImg} />
 
-          <div className="mt-10 flex flex-wrap justify-center gap-10 w-full max-w-2xl">
+          {/* Feature callouts */}
+          <div className="mt-10 lg:mt-14 flex flex-wrap justify-center gap-10 w-full max-w-2xl">
             <FeatureCallout icon="🕐" title="Smart Scheduling" desc="Plan your classes efficiently" />
             <FeatureCallout icon="🔔" title="Real-time Updates" desc="Stay updated with latest changes" />
             <FeatureCallout icon="👥" title="Smarter Spaces" desc="Find the best spaces instantly" />
