@@ -6,6 +6,7 @@ interface BubbleProps {
   icon: React.ReactNode;
   className: string; // Absolute positions matching your exact layout
   bgColor: string;
+  floatClass?: string;
 }
 
 const bubbleItems: BubbleProps[] = [
@@ -17,7 +18,8 @@ const bubbleItems: BubbleProps[] = [
       </svg>
     ),
     className: 'top-[8%] left-[28%]',
-    bgColor: 'from-violet-500 via-purple-500 to-purple-600',
+    bgColor: 'bg-brand-purple',
+    floatClass: 'animate-float-a',
   },
   {
     label: 'Room Finding',
@@ -28,7 +30,8 @@ const bubbleItems: BubbleProps[] = [
       </svg>
     ),
     className: 'top-[8%] right-[28%]',
-    bgColor: 'from-sky-500 via-cyan-500 to-blue-500',
+    bgColor: 'bg-sky-500',
+    floatClass: 'animate-float-b',
   },
   {
     label: 'Timetable',
@@ -42,7 +45,8 @@ const bubbleItems: BubbleProps[] = [
       </svg>
     ),
     className: 'left-[8%] top-[50%] -translate-y-1/2',
-    bgColor: 'from-orange-400 via-orange-500 to-orange-600',
+    bgColor: 'bg-orange-500',
+    floatClass: 'animate-float-c',
   },
   {
     label: 'Calendar',
@@ -55,7 +59,8 @@ const bubbleItems: BubbleProps[] = [
       </svg>
     ),
     className: 'right-[8%] top-[50%] -translate-y-1/2',
-    bgColor: 'from-emerald-500 via-emerald-400 to-lime-500',
+    bgColor: 'bg-emerald-500',
+    floatClass: 'animate-float-d',
   },
   {
     label: 'Notifications',
@@ -66,7 +71,8 @@ const bubbleItems: BubbleProps[] = [
       </svg>
     ),
     className: 'bottom-[4%] left-[50%] -translate-x-1/2',
-    bgColor: 'from-pink-500 via-fuchsia-500 to-rose-500',
+    bgColor: 'bg-pink-500',
+    floatClass: 'animate-float-b',
   },
 ];
 
@@ -77,8 +83,8 @@ export default function AnimatedVisual({ laptopImg }: { laptopImg: string }) {
       {/* ─── 1. BACKGROUND GLOW EFFECT ─── */}
       <div className="absolute w-[300px] h-[300px] rounded-full bg-[radial-gradient(circle,_rgba(124,58,237,0.22),_transparent_65%)] blur-3xl pointer-events-none" />
 
-      {/* ─── 2. THE MAIN ORBIT CIRCLE (Dashed) ─── */}
-      <div className="absolute w-[440px] h-[440px] rounded-full border border-dashed border-purple-500/30 flex items-center justify-center pointer-events-none">
+      {/* ─── 2. THE MAIN ORBIT CIRCLE (subtle solid & blurred) ─── */}
+      <div className="absolute w-[440px] h-[440px] rounded-full border border-purple-500/20 flex items-center justify-center pointer-events-none blur-sm opacity-60">
         
         {/* ─── 3. ROTATING DOT CONTROLLER ─── */}
         {/* Is div ko hum pure 360deg spin karwa rahe hain taake iske andar wale dots orbit par ghaumein */}
@@ -108,10 +114,10 @@ export default function AnimatedVisual({ laptopImg }: { laptopImg: string }) {
       {bubbleItems.map((item) => (
         <div 
           key={item.label} 
-          className={`absolute ${item.className} z-30 flex flex-col items-center group cursor-pointer`}
+          className={`absolute ${item.className} z-30 flex flex-col items-center group cursor-pointer ${item.floatClass ?? ''}`}
         >
-          {/* Bubble Icon Shell */}
-          <div className={`w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-full bg-gradient-to-br ${item.bgColor} text-white shadow-[0_15px_35px_rgba(0,0,0,0.3)] border border-white/20 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_20px_40px_rgba(124,58,237,0.4)]`}>
+          {/* Bubble Icon Shell - solid accent color, subtle shadow, no glow */}
+          <div className={`w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-full ${item.bgColor} text-white shadow-sm border border-white/10 transition-transform duration-300 group-hover:scale-105`}>
             {item.icon}
           </div>
           
